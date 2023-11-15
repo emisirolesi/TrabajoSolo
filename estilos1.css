@@ -197,4 +197,17 @@ footer {
   button:hover {
     background-color:#E46353;
   }
+
+  .titulo4 {
+    text-align: center;
+  }
   
+  .video {
+    margin: 0 auto;
+    width: 1000px;
+    display: block;
+  }
+  
+  .texto1 {
+    text-align: center;
+  }
