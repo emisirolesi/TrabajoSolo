@@ -1,15 +1,25 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-  event.preventDefault();
 
-  // Obtener valores de usuario y contraseña
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  // Validar usuario y contraseña
-  if (username === 'usuario' && password === 'contraseña') {
-    alert('Inicio de sesión exitoso');
-    // redidirigir a otra pagina?
-  } else {
-    alert('Usuario o contraseña incorrectos');
-  }
-});
+        let currentStep = 1;
+      
+        function showStep(step) {
+          document.querySelectorAll('[id^="step"]').forEach(element => {
+            element.style.display = 'none';
+          });
+          document.getElementById(`step${step}`).style.display = 'block';
+        }
+      
+        function nextStep(step) {
+          if (step === currentStep && step < 3) {
+            currentStep++;
+            showStep(currentStep);
+          }
+        }
+      
+        function prevStep(step) {
+          if (step === currentStep && step > 1) {
+            currentStep--;
+            showStep(currentStep);
+          }
+        }
+      
+        showStep(currentStep); // Mostrar el primer paso al cargar la página

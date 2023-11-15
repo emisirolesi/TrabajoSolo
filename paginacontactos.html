@@ -27,31 +27,39 @@
                 <li><a href="#"></a><i class="las la-search"></i></li>
             </ul>
         </nav>
-    </header>
-    <h2>¿Tienes algo para decir?</h2>
 
-     <p class=texto1>A través de este formulario puedes enviarme un mensaje para ayudarme a corregir errores, a mejorar mi blog, o simplemente para decir hola. Cualquier cosa que tengas para decir es bienvenida, así que no lo dudes y déjame un mensaje. Estaré feliz de contestarte!</p>
-     
-     <form action="../../form-result.php" target="_blank">
-       <fieldset class=figcaption>
-         <legend>Mensaje</legend>
-         <p><label>Tu nombre: <input type="text" name="nombre"></label></p>
-         <p><label>Tu dirección de correo: <input type="text" name="correo"></label></p>
-         <p>
-           <label>
-             Tu mensaje:<br>
-             <textarea name="mensaje"></textarea>
-           </label>
-         </p>
-       </fieldset> 
-       <p>
-         <input type="submit" value="Enviar mensaje">
-         <input type="reset" value="Comenzar de nuevo">  
-       </p>
+      </header>
+      <h2>¿Tienes algo para decir?</h2>
+      <p class="texto1">A través de este formulario puedes enviarme un mensaje para ayudarme a corregir errores, a mejorar mi blog, o simplemente para decir hola. Cualquier cosa que tengas para decir es bienvenida, así que no lo dudes y déjame un mensaje. ¡Estaré feliz de contestarte!</p>
+      
+      <form id="wizardForm" action="../../form-result.php" target="_blank">
+        <fieldset id="step1" class="figcaption">
+          <legend>Paso 1</legend>
+          <p><label>Tu nombre: <input type="text" name="nombre" required></label></p>
+          <button type="button" onclick="nextStep(1)">Siguiente</button>
+        </fieldset>
+      
+        <fieldset id="step2" class="figcaption" style="display: none;">
+          <legend>Paso 2</legend>
+          <p><label>Tu dirección de correo: <input type="text" name="correo" required></label></p>
+          <button type="button" onclick="prevStep(2)">Anterior</button>
+          <button type="button" onclick="nextStep(2)">Siguiente</button>
+        </fieldset>
+      
+        <fieldset id="step3" class="figcaption" style="display: none;">
+          <legend>Paso 3</legend>
+          <p>
+            <label>Tu mensaje:<br>
+              <textarea name="mensaje" required></textarea>
+            </label>
+          </p>
+          <button type="button" onclick="prevStep(3)">Anterior</button>
+          <input type="submit" value="Enviar mensaje">
+          <input type="reset" value="Comenzar de nuevo">
+        </fieldset>
+      </form>
 
-     </form>
-    
-        
+      <script src="scripts.js"></script>
     <footer class="footer">
         <div class="contenedorb">
             <div class="lab la-facebook"></div>
