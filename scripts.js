@@ -5,10 +5,10 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  // Validar usuario y contraseña (solo un ejemplo básico)
+  // Validar usuario y contraseña
   if (username === 'usuario' && password === 'contraseña') {
     alert('Inicio de sesión exitoso');
-    // Aquí puedes redirigir a otra página
+    // redidirigir a otra pagina?
   } else {
     alert('Usuario o contraseña incorrectos');
   }
